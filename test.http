@@ -1,0 +1,3 @@
+### Get all categories
+GET http://localhost:4002/api/categories
+Accept: application/json
