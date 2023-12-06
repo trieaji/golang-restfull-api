@@ -9,6 +9,8 @@ import (
 )
 
 type CategoryRepositoryImpl struct {
+	//biasanya berisi db (DB *sql.DB)
+	//Tidak  ada db nya karena ditaruh di folder tersendiri
 }
 
 func NewCategoryRepository() CategoryRepository {
