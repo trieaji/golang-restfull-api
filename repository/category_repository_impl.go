@@ -8,7 +8,7 @@ import (
 	"golang-restfullapi/model/domain"
 )
 
-type CategoryRepositoryImpl struct {
+type CategoryRepositoryImpl struct { //sudah mengikuti kontrak dari CategoryRepository, itulah sebabnya isinya berupa struct kosong
 	//biasanya berisi db (DB *sql.DB)
 	//Tidak  ada db nya karena ditaruh di folder tersendiri
 }
