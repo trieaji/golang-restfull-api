@@ -1,6 +1,6 @@
 package web
 
-type WebResponse struct {
+type WebResponse struct {//berguna sebagai response 
 	Code int	`json:"code"`
 	Status string `json:"string"`
 	Data interface{} `json:"data"`
