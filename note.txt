@@ -1,0 +1,44 @@
+Pembuatan restfull api
+model [
+    1. domain(domain berisi untuk merepresentasikan tiap tabel yg akan digunakan repository)
+    2. web(web berisi untuk merepresentasikan tiap tabel yg akan digunakan service dan biasanya berisi response sebagai return atau pengembalian)
+    3. web juga digunakan untuk merepresentasikan tiap tabel yg akan digunakan controller
+] 
+repository [
+    1. Membuat interface terlebih dahulu
+    2. Membuat category_repository implementation
+    3. Membuat function2 atau method yg berhubungan dengan operasi ke db, seperti; Insert,FindAll,FindById, dll
+    4. Setelah itu meng implementasikan function atau method yg sudah dibuat ke file baru tapi dalam folder yg sama yaitu, repository(category_repository implementation)
+
+]
+service [
+    1. Membuat interface terlebih dahulu
+    2. Biasanya service itu function nya mengikuti jumlah api nya, jadi api nya ada berapa maka functionnya juga mengikuti ada berapa.
+    3. Membuat category_service implementation
+    4. service berguna sebagai bisnis logic
+]
+controller [
+    1. Membuat interface terlebih dahulu
+    2. Membuat category_controller implementation
+    3. controller berguna sebagai jalan menuju router
+]
+HTTP Router [
+    1. Membuat HTTP Router di file router
+]
+app [
+    1. Menyiapkan database di dalam folder app
+]
+ErrorHandler [
+    1. Membuat function untuk memberikan response error di folder exception(error_handler.go)
+]
+middleware [
+    1. Membuat autentikasi
+]
+
+
+
+repository berguna untuk mengeksekusi semua perintah mysql
+service berfungsi sebagai bisnis logic nya
+fungsi helper ialah melakukan satu pekerjaan yang spesifik tanpa ada ketergantungan terhadap fungsi yang lain.
+kalau type nya struct jangan lupa dijadikan pointer
+main -> route -> controller -> service -> repository
