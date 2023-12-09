@@ -17,7 +17,7 @@ func NewAuthMiddleware(handler http.Handler) *AuthMiddleware {
 func (middleware *AuthMiddleware) ServeHTTP(writer http.ResponseWriter, request *http.Request) {
 	if "SECRET" == request.Header.Get("X-API-Key") {
 		
-		middleware.Handler.ServeHTTP(writer, request)
+		middleware.Handler.ServeHTTP(writer, request) //Diteruskan ke handler selanjutnya
 
 	} else {
 		// error
