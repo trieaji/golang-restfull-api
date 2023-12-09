@@ -13,8 +13,8 @@ import (
 )
 
 type CategoryServiceImpl struct {
-	CategoryRepository repository.CategoryRepository
-	DB	*sql.DB
+	CategoryRepository repository.CategoryRepository//membutuhkan repository
+	DB	*sql.DB//membutuhkan koneksi ke db nya
 	Validate validator.Validate
 }
 
