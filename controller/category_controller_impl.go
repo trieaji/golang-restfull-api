@@ -15,7 +15,7 @@ type CategoryControllerImpl struct {
 	CategoryService service.CategoryService
 }
 
-func NewCategoryController(categoryService service.CategoryService) CategoryController {
+func NewCategoryController(categoryService service.CategoryService) CategoryController {//function "NewCategoryController" ini nanti juga bisa dipanggil ke main.go
 	return &CategoryControllerImpl{
 		CategoryService: categoryService,
 	}
@@ -25,23 +25,23 @@ func (controller *CategoryControllerImpl) Create(writer http.ResponseWriter, req
 	// decoder := json.NewDecoder(request.Body)
 	categoryCreateRequest := web.CategoryCreateRequest{}
 	// whuwdw := &categoryCreateRequest
-	// err := decoder.Decode(&categoryCreateRequest)
+	// err := decoder.Decode(&categoryCreateRequest) atau (&whuwdw)
 	// helper.PanicIfError(err)
-	helper.ReadFromRequestBody(request, &categoryCreateRequest)
+	helper.ReadFromRequestBody(request, &categoryCreateRequest)//dibaca terlebih dahulu data yg masuk
 
-	categoryResponse := controller.CategoryService.Create(request.Context(), categoryCreateRequest)
+	categoryResponse := controller.CategoryService.Create(request.Context(), categoryCreateRequest)//membuat datanya
 	webResponse := web.WebResponse {
 		Code: 200,
 		Status: "OK luur",
 		Data: categoryResponse,
-	}
+	}//membuat response sebagai balikannya
 
 	// writer.Header().Add("Content-Type", "application/json")
 	// encoder := json.NewEncoder(writer)
 	// err = encoder.Encode(webResponse)
 	// helper.PanicIfError(err)
 
-	helper.WriteToResponseBody(writer, webResponse)
+	helper.WriteToResponseBody(writer, webResponse)//menulisakn response untuk dikirim ke client nya atau dikirim ke header
 
 }
 
